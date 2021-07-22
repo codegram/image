@@ -8,6 +8,7 @@
     >
     <img
       v-bind="nImgAttrs"
+      :class="imageClass"
       :src="nSources[0].src"
       :srcset="nSources[0].srcset"
       :sizes="nSources[0].sizes"
@@ -27,7 +28,8 @@ export default defineComponent({
   name: 'NuxtPicture',
   mixins: [imageMixin],
   props: {
-    legacyFormat: { type: String, default: null }
+    legacyFormat: { type: String, default: null },
+    imageClass: { type: String, default: null }
   },
   computed: {
     isTransparent (): boolean {
